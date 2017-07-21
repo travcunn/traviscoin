@@ -6,19 +6,19 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Paycoin</source>
+        <source>About TravisCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Paycoin&lt;/b&gt; version</source>
+        <source>&lt;b&gt;TravisCoin&lt;/b&gt; version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2012 Bitcoin Developers
 Copyright © 2011-2014 Peercoin Developers
-Copyright © 2014-2015 Paycoin Developers</source>
+Copyright © 2014-2015 TravisCoin Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -41,7 +41,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+6"/>
-        <source>These are your Paycoin addresses for receiving payments.  You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <source>These are your TravisCoin addresses for receiving payments.  You may want to give a different one to each sender so you can keep track of who is paying you.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -258,7 +258,7 @@ Are you sure you wish to encrypt your wallet?</source>
     </message>
     <message>
         <location line="+10"/>
-        <source>Paycoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your Paycoins from being stolen by malware infecting your computer.</source>
+        <source>TravisCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your TravisCoins from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -369,7 +369,7 @@ Are you sure you wish to encrypt your wallet?</source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Paycoin</source>
+        <source>Show information about TravisCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -474,7 +474,7 @@ Are you sure you wish to encrypt your wallet?</source>
     </message>
     <message>
         <location line="-437"/>
-        <source>Send coins to a Paycoin address</source>
+        <source>Send coins to a TravisCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -489,22 +489,22 @@ Are you sure you wish to encrypt your wallet?</source>
     </message>
     <message>
         <location line="+24"/>
-        <source>&amp;About Paycoin</source>
+        <source>&amp;About TravisCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Modify configuration options for Paycoin</source>
+        <source>Modify configuration options for TravisCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Show/Hide &amp;Paycoin</source>
+        <source>Show/Hide &amp;TravisCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Show or hide the Paycoin window</source>
+        <source>Show or hide the TravisCoin window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -524,15 +524,15 @@ Are you sure you wish to encrypt your wallet?</source>
     </message>
     <message>
         <location line="+147"/>
-        <source>Paycoin client</source>
+        <source>TravisCoin client</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location line="+73"/>
-        <source>%n active connection(s) to Paycoin network</source>
+        <source>%n active connection(s) to TravisCoin network</source>
         <translation>
-            <numerusform>%n active connection to Paycoin network</numerusform>
-            <numerusform>%n active connections to Paycoin network</numerusform>
+            <numerusform>%n active connection to TravisCoin network</numerusform>
+            <numerusform>%n active connections to TravisCoin network</numerusform>
         </translation>
     </message>
     <message>
@@ -560,7 +560,7 @@ Are you sure you wish to encrypt your wallet?</source>
     </message>
     <message>
         <location line="-482"/>
-        <source>Paycoin</source>
+        <source>TravisCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -671,7 +671,7 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+131"/>
-        <source>A fatal error occurred. Paycoin can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. TravisCoin can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -681,7 +681,7 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Edit the paycoin.conf file in the default text editor</source>
+        <source>Edit the traviscoin.conf file in the default text editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -973,7 +973,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+17"/>
-        <source>The user interface language can be set here. This setting will only take effect after restarting Paycoin.</source>
+        <source>The user interface language can be set here. This setting will only take effect after restarting TravisCoin.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -998,7 +998,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+1"/>
-        <source>Whether to show Paycoin addresses in the transaction list</source>
+        <source>Whether to show TravisCoin addresses in the transaction list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1018,7 +1018,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+0"/>
-        <source>This setting will take effect after restarting Paycoin.</source>
+        <source>This setting will take effect after restarting TravisCoin.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1081,7 +1081,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Paycoin address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid TravisCoin address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1100,7 +1100,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>Paycoin-Qt</source>
+        <source>TravisCoin-Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1163,12 +1163,12 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-5"/>
-        <source>&amp;Start Paycoin on system login</source>
+        <source>&amp;Start TravisCoin on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Automatically start Paycoin after logging in to the system</source>
+        <source>Automatically start TravisCoin after logging in to the system</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1682,7 +1682,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+1"/>
-        <source>Automatically open the Paycoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the TravisCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1712,7 +1712,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-20"/>
-        <source>Connect to the Paycoin network through a SOCKS4 proxy (e.g. when connecting through Tor)</source>
+        <source>Connect to the TravisCoin network through a SOCKS4 proxy (e.g. when connecting through Tor)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1769,7 +1769,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="-58"/>
         <location line="+187"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Paycoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the TravisCoin network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1866,7 +1866,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+15"/>
-        <source>Paycoin Core</source>
+        <source>TravisCoin Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1934,7 +1934,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Paycoin debug logfile from the current data directory. This can take a few seconds for large logfiles.</source>
+        <source>Open the TravisCoin debug logfile from the current data directory. This can take a few seconds for large logfiles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1944,7 +1944,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+20"/>
-        <source>Show the Paycoin-Qt help message to get a list with possible Paycoin command-line options.</source>
+        <source>Show the TravisCoin-Qt help message to get a list with possible TravisCoin command-line options.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1954,7 +1954,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-78"/>
-        <source>Paycoin - Debug window</source>
+        <source>TravisCoin - Debug window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1989,7 +1989,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-32"/>
-        <source>Welcome to the Paycoin RPC console.</source>
+        <source>Welcome to the TravisCoin RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2213,7 +2213,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+275"/>
-        <source>Warning: Invalid Paycoin address</source>
+        <source>Warning: Invalid TravisCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2228,7 +2228,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-441"/>
-        <source>Enter a Paycoin address</source>
+        <source>Enter a TravisCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2297,7 +2297,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+6"/>
-        <source>Enter a Paycoin address (e.g. PNS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <source>Enter a TravisCoin address (e.g. PNS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2387,7 +2387,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Paycoin address</source>
+        <source>Sign the message to prove you own this TravisCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2423,7 +2423,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+37"/>
-        <source>Verify the message to ensure it was signed with the specified Paycoin address</source>
+        <source>Verify the message to ensure it was signed with the specified TravisCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2449,7 +2449,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+1"/>
         <location line="+1"/>
-        <source>Enter a Paycoin address</source>
+        <source>Enter a TravisCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2523,7 +2523,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The Paycoin developers</source>
+        <source>The TravisCoin developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3096,7 +3096,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-31"/>
-        <source>Paycoin version</source>
+        <source>TravisCoin version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3116,12 +3116,12 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+22"/>
-        <source>Specify configuration file (default: paycoin.conf)</source>
+        <source>Specify configuration file (default: traviscoin.conf)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: paycoind.pid)</source>
+        <source>Specify pid file (default: traviscoind.pid)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3311,12 +3311,12 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s.  Paycoin is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s.  TravisCoin is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+94"/>
-        <source>Paycoin</source>
+        <source>TravisCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3336,7 +3336,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+31"/>
-        <source>Send command to server or paycoind</source>
+        <source>Send command to server or traviscoind</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3424,7 +3424,7 @@ This label turns red if the priority is smaller than &quot;medium&quot;.
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=paycoinrpc
+rpcuser=traviscoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
@@ -3439,7 +3439,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location line="+9"/>
-        <source>Unable to bind to %s on this computer. Paycoin is probably already running.</source>
+        <source>Unable to bind to %s on this computer. TravisCoin is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3450,7 +3450,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     <message>
         <location line="+11"/>
         <source>
-SSL options: (see the Paycoin Wiki for SSL setup instructions)</source>
+SSL options: (see the TravisCoin Wiki for SSL setup instructions)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3505,17 +3505,17 @@ SSL options: (see the Paycoin Wiki for SSL setup instructions)</source>
     </message>
     <message>
         <location line="+12"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Paycoin</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of TravisCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+72"/>
-        <source>Wallet needed to be rewritten: restart Paycoin to complete</source>
+        <source>Wallet needed to be rewritten: restart TravisCoin to complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct.  If your clock is wrong Paycoin will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct.  If your clock is wrong TravisCoin will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

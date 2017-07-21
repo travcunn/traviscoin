@@ -202,7 +202,7 @@ RPCConsole::RPCConsole(QWidget *parent) :
     ui->notice->setTextFormat(Qt::RichText);
     ui->notice->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
     ui->notice->setOpenExternalLinks(true);
-    ui->notice->setText("For more information on these commands, see the <a href='http://xpy.wiki/index.php?title=Paycoin_client/API_calls_list'>Wiki</a>");
+    ui->notice->setText("For more information on these commands, see the <a href='http://xpy.wiki/index.php?title=TravisCoin_client/API_calls_list'>Wiki</a>");
 
     connect(ui->clearButton, SIGNAL(clicked()), this, SLOT(clear()));
 
@@ -314,7 +314,7 @@ void RPCConsole::clear()
                 "b { color: #006060; } "
                 );
 
-    message(CMD_REPLY, (tr("Welcome to the Paycoin RPC console.") + "<br>" +
+    message(CMD_REPLY, (tr("Welcome to the TravisCoin RPC console.") + "<br>" +
                         tr("Use up and down arrows to navigate history, and <b>Ctrl-L</b> to clear screen.") + "<br>" +
                         tr("Type <b>help</b> for an overview of available commands.")), true);
 }

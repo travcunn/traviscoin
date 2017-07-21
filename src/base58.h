@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin Developers
 // Copyright (c) 2011-2015 The Peercoin developers
-// Copyright (c) 2014-2015 The Paycoin developers
+// Copyright (c) 2014-2015 The TravisCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -255,7 +255,7 @@ public:
     bool operator> (const CBase58Data& b58) const { return CompareTo(b58) >  0; }
 };
 
-/** base58-encoded Paycoin addresses.
+/** base58-encoded TravisCoin addresses.
  * Public-key-hash-addresses have version 55 (or 111 testnet).
  * The data vector contains RIPEMD160(SHA256(pubkey)), where pubkey is the serialized public key.
  * Script-hash-addresses have version 117 (or 196 testnet).
@@ -278,8 +278,8 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 55,  // paycoin: addresses begin with 'P'
-        SCRIPT_ADDRESS = 117, // paycoin: addresses begin with 'p'
+        PUBKEY_ADDRESS = 55,  // traviscoin: addresses begin with 'P'
+        SCRIPT_ADDRESS = 117, // traviscoin: addresses begin with 'p'
         PUBKEY_ADDRESS_TEST = 111,
         SCRIPT_ADDRESS_TEST = 196,
     };

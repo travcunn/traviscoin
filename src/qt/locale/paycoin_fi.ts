@@ -184,15 +184,15 @@
     </message>
     <message>
         <source>&amp;Receive coins</source>
-        <translation>&amp;Paycoinien vastaanottaminen</translation>
+        <translation>&amp;TravisCoinien vastaanottaminen</translation>
     </message>
     <message>
         <source>Show the list of addresses for receiving payments</source>
-        <translation>Näytä Paycoinien vastaanottamiseen käytetyt osoitteet</translation>
+        <translation>Näytä TravisCoinien vastaanottamiseen käytetyt osoitteet</translation>
     </message>
     <message>
         <source>&amp;Send coins</source>
-        <translation>&amp;Lähetä Paycoineja</translation>
+        <translation>&amp;Lähetä TravisCoineja</translation>
     </message>
     <message>
         <source>Prove you control an address</source>
@@ -554,11 +554,11 @@ Osoite: %4</translation>
     </message>
     <message>
         <source>Your current balance</source>
-        <translation>Tililläsi tällä hetkellä olevien Paycoinien määrä</translation>
+        <translation>Tililläsi tällä hetkellä olevien TravisCoinien määrä</translation>
     </message>
     <message>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the current balance</source>
-        <translation>Niiden saapuvien rahansiirtojen määrä, joita Paycoin-verkko ei vielä ole ehtinyt vahvistaa ja siten eivät vielä näy saldossa.</translation>
+        <translation>Niiden saapuvien rahansiirtojen määrä, joita TravisCoin-verkko ei vielä ole ehtinyt vahvistaa ja siten eivät vielä näy saldossa.</translation>
     </message>
     <message>
         <source>Total number of transactions in wallet</source>
@@ -603,7 +603,7 @@ Osoite: %4</translation>
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Lähetä Paycoineja</translation>
+        <translation>Lähetä TravisCoineja</translation>
     </message>
     <message>
         <source>0</source>
@@ -651,7 +651,7 @@ Osoite: %4</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
-        <translation>Hyväksy Paycoinien lähettäminen</translation>
+        <translation>Hyväksy TravisCoinien lähettäminen</translation>
     </message>
     <message>
         <source>Are you sure you want to send %1?</source>
@@ -873,7 +873,7 @@ Osoite: %4</translation>
     </message>
     <message>
         <source>Destination address of transaction.</source>
-        <translation>Rahansiirron kohteen Paycoin-osoite</translation>
+        <translation>Rahansiirron kohteen TravisCoin-osoite</translation>
     </message>
     <message>
         <source>Amount removed from or added to balance.</source>
@@ -1036,8 +1036,8 @@ Osoite: %4</translation>
         <translation>Asetukset:</translation>
     </message>
     <message>
-        <source>Specify pid file (default: paycoind.pid)</source>
-        <translation>Määritä pid-tiedosto (oletus: Paycoin.pid)</translation>
+        <source>Specify pid file (default: traviscoind.pid)</source>
+        <translation>Määritä pid-tiedosto (oletus: TravisCoin.pid)</translation>
     </message>
     <message>
         <source>Generate coins</source>
@@ -1186,7 +1186,7 @@ TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</translation>
     </message>
     <message>
         <source>Error: The transaction was rejected.  This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Virhe: Rahansiirto hylättiin.  Tämä voi tapahtua jos jotkin Paycoineistasi on jo käytetty, esimerkiksi jos olet käyttänyt kopiota wallet.dat-lompakkotiedostosta ja Paycoinit on merkitty käytetyksi vain kopiossa.</translation>
+        <translation>Virhe: Rahansiirto hylättiin.  Tämä voi tapahtua jos jotkin TravisCoineistasi on jo käytetty, esimerkiksi jos olet käyttänyt kopiota wallet.dat-lompakkotiedostosta ja TravisCoinit on merkitty käytetyksi vain kopiossa.</translation>
     </message>
     </context>
 </TS>

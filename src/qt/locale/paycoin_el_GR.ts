@@ -27,7 +27,7 @@
     </message>
     <message>
         <source>Sign a message to prove you own this address</source>
-        <translation>Υπογράψτε ένα μήνυμα για ν' αποδείξετε πως σας ανήκει μια συγκεκριμένη διεύθυνση Paycoin</translation>
+        <translation>Υπογράψτε ένα μήνυμα για ν' αποδείξετε πως σας ανήκει μια συγκεκριμένη διεύθυνση TravisCoin</translation>
     </message>
     <message>
         <source>&amp;Sign Message</source>

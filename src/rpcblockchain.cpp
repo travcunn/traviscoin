@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2015 The Paycoin developers
+// Copyright (c) 2015 The TravisCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -168,7 +168,7 @@ Value getblock(const Array& params, bool fHelp)
     return blockToJSON(block, pblockindex, fTxInfo, fTxDetails);
 }
 
-// paycoin: get information of sync-checkpoint
+// traviscoin: get information of sync-checkpoint
 Value getcheckpoint(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)

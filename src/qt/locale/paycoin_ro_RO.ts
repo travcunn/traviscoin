@@ -168,7 +168,7 @@
     </message>
     <message>
         <source>&amp;Receive coins</source>
-        <translation>&amp;Primiţi Paycoin</translation>
+        <translation>&amp;Primiţi TravisCoin</translation>
     </message>
     <message>
         <source>Show the list of addresses for receiving payments</source>
@@ -176,7 +176,7 @@
     </message>
     <message>
         <source>&amp;Send coins</source>
-        <translation>&amp;Trimiteţi Paycoin</translation>
+        <translation>&amp;Trimiteţi TravisCoin</translation>
     </message>
     <message>
         <source>Quit application</source>
@@ -306,7 +306,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface, and when sending coins</source>
-        <translation>Alege subdiviziunea folosită la afişarea interfeţei şi la trimiterea de Paycoin.</translation>
+        <translation>Alege subdiviziunea folosită la afişarea interfeţei şi la trimiterea de TravisCoin.</translation>
     </message>
     </context>
 <context>
@@ -496,7 +496,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Trimite Paycoin</translation>
+        <translation>Trimite TravisCoin</translation>
     </message>
     <message>
         <source>0</source>
@@ -532,7 +532,7 @@
     </message>
     <message>
         <source>Confirm send coins</source>
-        <translation>Confirmaţi trimiterea de Paycoin</translation>
+        <translation>Confirmaţi trimiterea de TravisCoin</translation>
     </message>
     <message>
         <source>Are you sure you want to send %1?</source>
@@ -914,7 +914,7 @@
     </message>
     <message>
         <source>Error: The transaction was rejected.  This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Eroare: Tranyacţia a fost respinsă.  Acesta poate fi rezultatul cheltuirii prealabile a unei sume de Paycoin din portofelul electronic, ca în cazul folosirii unei copii a fisierului wallet.dat, în care s-au efectuat tranzacţii neînregistrate în fisierul curent.</translation>
+        <translation>Eroare: Tranyacţia a fost respinsă.  Acesta poate fi rezultatul cheltuirii prealabile a unei sume de TravisCoin din portofelul electronic, ca în cazul folosirii unei copii a fisierului wallet.dat, în care s-au efectuat tranzacţii neînregistrate în fisierul curent.</translation>
     </message>
     </context>
 </TS>

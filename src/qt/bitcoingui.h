@@ -185,7 +185,7 @@ private slots:
     /** simply calls showNormalIfMinimized(true) for use in SLOT() macro */
     void toggleHidden();
 
-    /** Launch the default text editor to edit the paycoin.conf */
+    /** Launch the default text editor to edit the traviscoin.conf */
     void editConfig();
 };
 

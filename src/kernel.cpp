@@ -1,5 +1,5 @@
 // Copyright (c) 2012-2015 The Peercoin developers
-// Copyright (c) 2014-2015 The Paycoin developers
+// Copyright (c) 2014-2015 The TravisCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -249,7 +249,7 @@ static bool GetKernelStakeModifier(uint256 hashBlockFrom, uint64& nStakeModifier
     return true;
 }
 
-// paycoin kernel protocol
+// traviscoin kernel protocol
 // coinstake must meet hash target according to the protocol:
 // kernel (input 0) must meet the formula
 //     hash(nStakeModifier + txPrev.block.nTime + txPrev.offset + txPrev.nTime + txPrev.vout.n + nTime) < bnTarget * nCoinDayWeight

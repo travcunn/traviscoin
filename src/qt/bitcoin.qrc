@@ -36,9 +36,9 @@
         <file alias="lock_open">res/icons/lock_open.png</file>
         <file alias="key">res/icons/key.png</file>
         <file alias="filesave">res/icons/filesave.png</file>
-        <file>res/icons/paycoin_testnet.png</file>
-        <file alias="paycoin_tooltip">res/icons/paycoin.png</file>
-        <file>res/icons/paycoin.ico</file>
+        <file>res/icons/traviscoin_testnet.png</file>
+        <file alias="traviscoin_tooltip">res/icons/traviscoin.png</file>
+        <file>res/icons/traviscoin.ico</file>
         <file alias="qrcode">res/icons/qrcode.png</file>
         <file alias="debugwindow">res/icons/debugwindow.png</file>
     </qresource>
@@ -85,44 +85,44 @@
         <file alias="spinner-034">res/movies/spinner-034.png</file>
     </qresource>
     <qresource prefix="/translations">
-        <file alias="ar">locale/paycoin_ar.qm</file>
-        <file alias="ca_ES">locale/paycoin_ca_ES.qm</file>
-        <file alias="cs">locale/paycoin_cs.qm</file>
-        <file alias="cs_CZ">locale/paycoin_cs_CZ.qm</file>
-        <file alias="da">locale/paycoin_da.qm</file>
-        <file alias="de">locale/paycoin_de.qm</file>
-        <file alias="el_GR">locale/paycoin_el_GR.qm</file>
-        <file alias="en">locale/paycoin_en.qm</file>
-        <file alias="es">locale/paycoin_es.qm</file>
-        <file alias="es_CL">locale/paycoin_es_CL.qm</file>
-        <file alias="et">locale/paycoin_et.qm</file>
-        <file alias="et_EE">locale/paycoin_et_EE.qm</file>
-        <file alias="eu_ES">locale/paycoin_eu_ES.qm</file>
-        <file alias="fa">locale/paycoin_fa.qm</file>
-        <file alias="fi">locale/paycoin_fi.qm</file>
-        <file alias="fr">locale/paycoin_fr.qm</file>
-        <file alias="he">locale/paycoin_he.qm</file>
-        <file alias="hi">locale/paycoin_hi.qm</file>
-        <file alias="hr">locale/paycoin_hr.qm</file>
-        <file alias="hr_HR">locale/paycoin_hr_HR.qm</file>
-        <file alias="hu">locale/paycoin_hu.qm</file>
-        <file alias="id">locale/paycoin_id.qm</file>
-        <file alias="it">locale/paycoin_it.qm</file>
-        <file alias="lt">locale/paycoin_lt.qm</file>
-        <file alias="nb">locale/paycoin_nb.qm</file>
-        <file alias="nl">locale/paycoin_nl.qm</file>
-        <file alias="pl">locale/paycoin_pl.qm</file>
-        <file alias="pt_BR">locale/paycoin_pt_BR.qm</file>
-        <file alias="ro_RO">locale/paycoin_ro_RO.qm</file>
-        <file alias="ru">locale/paycoin_ru.qm</file>
-        <file alias="sk">locale/paycoin_sk.qm</file>
-        <file alias="sk_SK">locale/paycoin_sk_SK.qm</file>
-        <file alias="sr">locale/paycoin_sr.qm</file>
-        <file alias="sv">locale/paycoin_sv.qm</file>
-        <file alias="tr">locale/paycoin_tr.qm</file>
-        <file alias="tr_TR">locale/paycoin_tr_TR.qm</file>
-        <file alias="uk">locale/paycoin_uk.qm</file>
-        <file alias="zh_CN">locale/paycoin_zh_CN.qm</file>
-        <file alias="zh_TW">locale/paycoin_zh_TW.qm</file>
+        <file alias="ar">locale/traviscoin_ar.qm</file>
+        <file alias="ca_ES">locale/traviscoin_ca_ES.qm</file>
+        <file alias="cs">locale/traviscoin_cs.qm</file>
+        <file alias="cs_CZ">locale/traviscoin_cs_CZ.qm</file>
+        <file alias="da">locale/traviscoin_da.qm</file>
+        <file alias="de">locale/traviscoin_de.qm</file>
+        <file alias="el_GR">locale/traviscoin_el_GR.qm</file>
+        <file alias="en">locale/traviscoin_en.qm</file>
+        <file alias="es">locale/traviscoin_es.qm</file>
+        <file alias="es_CL">locale/traviscoin_es_CL.qm</file>
+        <file alias="et">locale/traviscoin_et.qm</file>
+        <file alias="et_EE">locale/traviscoin_et_EE.qm</file>
+        <file alias="eu_ES">locale/traviscoin_eu_ES.qm</file>
+        <file alias="fa">locale/traviscoin_fa.qm</file>
+        <file alias="fi">locale/traviscoin_fi.qm</file>
+        <file alias="fr">locale/traviscoin_fr.qm</file>
+        <file alias="he">locale/traviscoin_he.qm</file>
+        <file alias="hi">locale/traviscoin_hi.qm</file>
+        <file alias="hr">locale/traviscoin_hr.qm</file>
+        <file alias="hr_HR">locale/traviscoin_hr_HR.qm</file>
+        <file alias="hu">locale/traviscoin_hu.qm</file>
+        <file alias="id">locale/traviscoin_id.qm</file>
+        <file alias="it">locale/traviscoin_it.qm</file>
+        <file alias="lt">locale/traviscoin_lt.qm</file>
+        <file alias="nb">locale/traviscoin_nb.qm</file>
+        <file alias="nl">locale/traviscoin_nl.qm</file>
+        <file alias="pl">locale/traviscoin_pl.qm</file>
+        <file alias="pt_BR">locale/traviscoin_pt_BR.qm</file>
+        <file alias="ro_RO">locale/traviscoin_ro_RO.qm</file>
+        <file alias="ru">locale/traviscoin_ru.qm</file>
+        <file alias="sk">locale/traviscoin_sk.qm</file>
+        <file alias="sk_SK">locale/traviscoin_sk_SK.qm</file>
+        <file alias="sr">locale/traviscoin_sr.qm</file>
+        <file alias="sv">locale/traviscoin_sv.qm</file>
+        <file alias="tr">locale/traviscoin_tr.qm</file>
+        <file alias="tr_TR">locale/traviscoin_tr_TR.qm</file>
+        <file alias="uk">locale/traviscoin_uk.qm</file>
+        <file alias="zh_CN">locale/traviscoin_zh_CN.qm</file>
+        <file alias="zh_TW">locale/traviscoin_zh_TW.qm</file>
     </qresource>
 </RCC>

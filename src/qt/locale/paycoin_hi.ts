@@ -269,8 +269,8 @@
         <translation>व्यवहार:</translation>
     </message>
     <message>
-        <source>Paycoin version</source>
-        <translation>Paycoin संस्करण</translation>
+        <source>TravisCoin version</source>
+        <translation>TravisCoin संस्करण</translation>
     </message>
     <message>
         <source>List commands</source>
@@ -309,8 +309,8 @@
         <translation>संबंध काल समापन निर्दिष्ट करें (मिलीसेकंड में )</translation>
     </message>
     <message>
-        <source>Paycoin</source>
-        <translation>Paycoin</translation>
+        <source>TravisCoin</source>
+        <translation>TravisCoin</translation>
     </message>
     </context>
 </TS>

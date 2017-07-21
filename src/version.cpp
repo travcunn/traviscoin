@@ -1,6 +1,6 @@
 // Copyright (c) 2012 The Bitcoin developers
 // Copyright (c) 2012-2015 The Peercoin developers
-// Copyright (c) 2014-2015 The Paycoin developers
+// Copyright (c) 2014-2015 The TravisCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include <string>
@@ -8,10 +8,10 @@
 #include "version.h"
 
 // Name of client reported in the 'version' message. Report the same name
-// for both paycoind and paycoin(-qt), to make it harder for attackers to
+// for both traviscoind and traviscoin(-qt), to make it harder for attackers to
 // target servers or GUI users specifically.
 
-// For the current run of Paycoin releases, the client name should be selected from
+// For the current run of TravisCoin releases, the client name should be selected from
 // the list of ancient coinage, from oldest known to more recent.
 // You can find ideas for future client names, here: https://en.wikipedia.org/wiki/List_of_historical_currencies
 

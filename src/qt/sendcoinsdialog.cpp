@@ -33,7 +33,7 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
 
 #if QT_VERSION >= 0x040700
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a Paycoin address"));
+    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a TravisCoin address"));
 #endif
 
     addEntry();
@@ -454,7 +454,7 @@ void SendCoinsDialog::coinControlChangeEdited(const QString& text)
         }
         else if (!addr.IsValid()) // Invalid address
         {
-            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid Paycoin address"));
+            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid TravisCoin address"));
         }
         else // Valid address
         {

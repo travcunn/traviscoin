@@ -1,7 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2015 The Peercoin developers
-// Copyright (c) 2014-2015 The Paycoin developers
+// Copyright (c) 2014-2015 The TravisCoin developers
+// Copyright (c) 2017 The TravisCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -62,7 +63,7 @@ map<uint256, map<uint256, CDataStream*> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Paycoin Signed Message:\n";
+const string strMessageMagic = "TravisCoin Signed Message:\n";
 
 double dHashesPerSec;
 int64 nHPSTimerStart;
@@ -126,7 +127,7 @@ void SyncWithWallets(const CTransaction& tx, const CBlock* pblock, bool fUpdate,
 {
     if (!fConnect)
     {
-        // paycoin: wallets need to refund inputs when disconnecting coinstake
+        // traviscoin: wallets need to refund inputs when disconnecting coinstake
         if (tx.IsCoinStake())
         {
             BOOST_FOREACH(CWallet* pwallet, setpwalletRegistered)
@@ -469,7 +470,7 @@ bool CTransaction::CheckTransaction() const
         const CTxOut& txout = vout[i];
         if (txout.IsEmpty() && (!IsCoinBase()) && (!IsCoinStake()))
             return DoS(100, error("CTransaction::CheckTransaction() : txout empty for user transaction"));
-        // paycoin: enforce minimum output amount
+        // traviscoin: enforce minimum output amount
         if ((!IsCoinBase() && (!IsCoinStake()) && txout.nValue < MIN_TXOUT_AMOUNT))
             return DoS(100, error("CTransaction::CheckTransaction() : txout.nValue below minimum"));
         if ((!txout.IsEmpty()) && txout.nValue < 0)
@@ -564,7 +565,7 @@ bool CTxMemPool::accept(CTxDB& txdb, CTransaction &tx, bool fCheckInputs,
     // Coinbase is only valid in a block, not as a loose transaction
     if (tx.IsCoinBase())
         return tx.DoS(100, error("CTxMemPool::accept() : coinbase as individual tx"));
-    // paycoin: coinstake is also only valid in a block, not as a loose transaction
+    // traviscoin: coinstake is also only valid in a block, not as a loose transaction
     if (tx.IsCoinStake())
         return tx.DoS(100, error("CTxMemPool::accept() : coinstake as individual tx"));
 
@@ -965,7 +966,7 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
     return pblock->GetHash();
 }
 
-// paycoin: find block wanted by given orphan block
+// traviscoin: find block wanted by given orphan block
 uint256 WantedByOrphan(const CBlock* pblockOrphan)
 {
     // Work back to the first block in the orphan chain
@@ -992,7 +993,7 @@ int64 GetProofOfWorkReward(int nHeight, unsigned int nTime)
 }
 
 
-// paycoin: miner's coin stake is rewarded based on coin age spent (coin-days)
+// traviscoin: miner's coin stake is rewarded based on coin age spent (coin-days)
 int64 GetProofOfStakeReward(int64 nCoinAge, unsigned int nTime, int primeNodeRate)
 {
 
@@ -1047,7 +1048,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime, bool fProofOfStake)
 }
 
 
-// paycoin: find last block index up to pindex
+// traviscoin: find last block index up to pindex
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake)
 {
     while (pindex && pindex->pprev && (pindex->IsProofOfStake() != fProofOfStake))
@@ -1070,14 +1071,14 @@ unsigned int static GetNextTargetRequired(const CBlockIndex* pindexLast, bool fP
     if (!fProofOfStake && pindexLast->nHeight >= 23 && pindexLast->nHeight < 120)
         return bnProofOfWorkLimit.GetCompact(); // most of the 1st 120 blocks
 
-        // paycoin: block stuck at 227
+        // traviscoin: block stuck at 227
     if (!fProofOfStake && pindexLast->nHeight >= 277 && pindexLast->nHeight < 400)
         return bn227HashTarget.GetCompact();
 
     int64 nActualSpacing = pindexPrev->GetBlockTime() - pindexPrevPrev->GetBlockTime();
 
-    // paycoin: target change every block
-    // paycoin: retarget with exponential moving toward target spacing
+    // traviscoin: target change every block
+    // traviscoin: retarget with exponential moving toward target spacing
     CBigNum bnNew;
     bnNew.SetCompact(pindexPrev->nBits);
     int64 nTargetSpacing = fProofOfStake? STAKE_TARGET_SPACING : min(nTargetSpacingWorkMax, (int64) STAKE_TARGET_SPACING * (1 + pindexLast->nHeight - pindexPrev->nHeight));
@@ -1142,7 +1143,7 @@ void static InvalidChainFound(CBlockIndex* pindexNew)
     }
     printf("InvalidChainFound: invalid block=%s  height=%d  trust=%s\n", pindexNew->GetBlockHash().ToString().substr(0,20).c_str(), pindexNew->nHeight, CBigNum(pindexNew->bnChainTrust).ToString().c_str());
     printf("InvalidChainFound:  current best=%s  height=%d  trust=%s\n", hashBestChain.ToString().substr(0,20).c_str(), nBestHeight, CBigNum(bnBestChainTrust).ToString().c_str());
-    // paycoin: should not enter safe mode for longer invalid chain
+    // traviscoin: should not enter safe mode for longer invalid chain
 }
 
 void CBlock::UpdateTime(const CBlockIndex* pindexPrev)
@@ -1342,7 +1343,7 @@ bool CTransaction::ConnectInputs(CTxDB& txdb, MapPrevTx inputs,
                     if (pindex->nBlockPos == txindex.pos.nBlockPos && pindex->nFile == txindex.pos.nFile)
                         return error("ConnectInputs() : tried to spend coinbase/coinstake at depth %d", pindexBlock->nHeight - pindex->nHeight);
 
-            // paycoin: check transaction timestamp
+            // traviscoin: check transaction timestamp
             if (txPrev.nTime > nTime)
                 return DoS(100, error("ConnectInputs() : transaction timestamp earlier than input transaction"));
 
@@ -1397,7 +1398,7 @@ bool CTransaction::ConnectInputs(CTxDB& txdb, MapPrevTx inputs,
 
         if (IsCoinStake())
         {
-            // paycoin: coin stake tx earns reward instead of paying fee
+            // traviscoin: coin stake tx earns reward instead of paying fee
             uint64 nCoinAge;
             if (!GetCoinAge(txdb, nCoinAge))
                 return error("ConnectInputs() : %s unable to get coin age for coinstake", GetHash().ToString().substr(0,10).c_str());
@@ -1426,7 +1427,7 @@ bool CTransaction::ConnectInputs(CTxDB& txdb, MapPrevTx inputs,
             int64 nTxFee = nValueIn - GetValueOut();
             if (nTxFee < 0)
                 return DoS(100, error("ConnectInputs() : %s nTxFee < 0", GetHash().ToString().substr(0,10).c_str()));
-            // paycoin: enforce transaction fees for every block
+            // traviscoin: enforce transaction fees for every block
             if (nTxFee < GetMinFee())
                 return fBlock? DoS(100, error("ConnectInputs() : %s not paying required fee=%s, paid=%s", GetHash().ToString().substr(0,10).c_str(), FormatMoney(GetMinFee()).c_str(), FormatMoney(nTxFee).c_str())) : false;
             nFees += nTxFee;
@@ -1517,7 +1518,7 @@ bool CBlock::DisconnectBlock(CTxDB& txdb, CBlockIndex* pindex)
             return error("DisconnectBlock() : WriteBlockIndex failed");
     }
 
-    // paycoin: cleanup wallet after disconnecting coinstake
+    // traviscoin: cleanup wallet after disconnecting coinstake
     BOOST_FOREACH(CTransaction& tx, vtx)
         SyncWithWallets(tx, this, false, false);
 
@@ -1610,7 +1611,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex)
     if (nBurnCoins > 0 && fDebug && GetBoolArg("-printcreation"))
         printf("ConnectBlock() : burning coins %s\n", FormatMoney(nBurnCoins).c_str());
 
-    // paycoin: track money supply and mint amount info
+    // traviscoin: track money supply and mint amount info
     pindex->nMint = nValueOut - nValueIn + nFees;
     pindex->nMoneySupply = ((pindex->pprev? pindex->pprev->nMoneySupply : 0) + nValueOut - nValueIn) - nBurnCoins;
     if (!txdb.WriteBlockIndex(CDiskBlockIndex(pindex)))
@@ -1623,8 +1624,8 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex)
             return error("ConnectBlock() : UpdateTxIndex failed");
     }
 
-    // paycoin: fees are not collected by miners as in bitcoin
-    // paycoin: fees are destroyed to compensate the entire network
+    // traviscoin: fees are not collected by miners as in bitcoin
+    // traviscoin: fees are destroyed to compensate the entire network
     if (fDebug && GetBoolArg("-printcreation"))
         printf("ConnectBlock() : destroy=%s nFees=%"PRI64d"\n", FormatMoney(nFees).c_str(), nFees);
 
@@ -1864,7 +1865,7 @@ bool CBlock::SetBestChain(CTxDB& txdb, CBlockIndex* pindexNew)
 }
 
 
-// paycoin: total coin age spent in transaction, in the unit of coin-days.
+// traviscoin: total coin age spent in transaction, in the unit of coin-days.
 // Only those coins meeting minimum age requirement counts. As those
 // transactions not in main chain are not currently indexed so we
 // might not find out about their coin age. Older transactions are
@@ -1910,7 +1911,7 @@ bool CTransaction::GetCoinAge(CTxDB& txdb, uint64& nCoinAge) const
     return true;
 }
 
-// paycoin: total coin age spent in block, in the unit of coin-days.
+// traviscoin: total coin age spent in block, in the unit of coin-days.
 bool CBlock::GetCoinAge(uint64& nCoinAge) const
 {
     nCoinAge = 0;
@@ -1953,14 +1954,14 @@ bool CBlock::AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos)
         pindexNew->nHeight = pindexNew->pprev->nHeight + 1;
     }
 
-    // paycoin: compute chain trust score
+    // traviscoin: compute chain trust score
     pindexNew->bnChainTrust = (pindexNew->pprev ? pindexNew->pprev->bnChainTrust : 0) + pindexNew->GetBlockTrust();
 
-    // paycoin: compute stake entropy bit for stake modifier
+    // traviscoin: compute stake entropy bit for stake modifier
     if (!pindexNew->SetStakeEntropyBit(GetStakeEntropyBit()))
         return error("AddToBlockIndex() : SetStakeEntropyBit() failed");
 
-    // paycoin: record proof-of-stake hash value
+    // traviscoin: record proof-of-stake hash value
     if (pindexNew->IsProofOfStake())
     {
         if (!mapProofOfStake.count(hash))
@@ -1968,7 +1969,7 @@ bool CBlock::AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos)
         pindexNew->hashProofOfStake = mapProofOfStake[hash];
     }
 
-    // paycoin: compute stake modifier
+    // traviscoin: compute stake modifier
     uint64 nStakeModifier = 0;
     bool fGeneratedStakeModifier = false;
     if (!ComputeNextStakeModifier(pindexNew, nStakeModifier, fGeneratedStakeModifier))
@@ -2038,12 +2039,12 @@ bool CBlock::CheckBlock(int64 nHeight) const
         if (vtx[i].IsCoinBase())
             return DoS(100, error("CheckBlock() : more than one coinbase"));
 
-    // paycoin: only the second transaction can be the optional coinstake
+    // traviscoin: only the second transaction can be the optional coinstake
     for (int i = 2; i < vtx.size(); i++)
         if (vtx[i].IsCoinStake())
             return DoS(100, error("CheckBlock() : coinstake in wrong position"));
 
-    // paycoin: coinbase output should be empty if proof-of-stake block
+    // traviscoin: coinbase output should be empty if proof-of-stake block
     if (IsProofOfStake() && (vtx[0].vout.size() != 1 || !vtx[0].vout[0].IsEmpty()))
         return error("CheckBlock() : coinbase output not empty for proof-of-stake block");
 
@@ -2077,7 +2078,7 @@ bool CBlock::CheckBlock(int64 nHeight) const
     {
         if (!tx.CheckTransaction())
             return DoS(tx.nDoS, error("CheckBlock() : CheckTransaction failed"));
-        // paycoin: check transaction timestamp
+        // traviscoin: check transaction timestamp
         if (GetBlockTime() < (int64)tx.nTime)
             return DoS(50, error("CheckBlock() : block timestamp earlier than transaction timestamp"));
     }
@@ -2104,7 +2105,7 @@ bool CBlock::CheckBlock(int64 nHeight) const
     if (hashMerkleRoot != BuildMerkleTree())
         return DoS(100, error("CheckBlock() : hashMerkleRoot mismatch"));
 
-    // paycoin: check block signature
+    // traviscoin: check block signature
     if (!CheckBlockSignature())
         return DoS(100, error("CheckBlock() : bad block signature"));
 
@@ -2146,7 +2147,7 @@ bool CBlock::AcceptBlock()
     if (!Checkpoints::CheckHardened(nHeight, hash))
         return DoS(100, error("AcceptBlock() : rejected by hardened checkpoint lockin at %d", nHeight));
 
-    // paycoin: check that the block satisfies synchronized checkpoint
+    // traviscoin: check that the block satisfies synchronized checkpoint
     if (!Checkpoints::CheckSync(hash, pindexPrev))
         return error("AcceptBlock() : rejected by synchronized checkpoint");
 
@@ -2170,7 +2171,7 @@ bool CBlock::AcceptBlock()
                 pnode->PushInventory(CInv(MSG_BLOCK, hash));
     }
 
-    // paycoin: check pending sync-checkpoint
+    // traviscoin: check pending sync-checkpoint
     Checkpoints::AcceptPendingSyncCheckpoint();
 
     return true;
@@ -2185,7 +2186,7 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
     if (mapOrphanBlocks.count(hash))
         return error("ProcessBlock() : already have block (orphan) %s", hash.ToString().substr(0,20).c_str());
 
-    // paycoin: check proof-of-stake
+    // traviscoin: check proof-of-stake
     // Limited duplicity on stake: prevents block flood attack
     // Duplicate stake allowed only when there is orphan child block
     if (pblock->IsProofOfStake() && setStakeSeen.count(pblock->GetProofOfStake()) && !mapOrphanBlocksByPrev.count(hash) && !Checkpoints::WantedByPendingSyncCheckpoint(hash))
@@ -2195,7 +2196,7 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
     if (!pblock->CheckBlock())
         return error("ProcessBlock() : CheckBlock FAILED");
 
-    // paycoin: verify hash target and signature of coinstake tx
+    // traviscoin: verify hash target and signature of coinstake tx
     if (pblock->IsProofOfStake())
     {
         uint256 hashProofOfStake = 0;
@@ -2203,7 +2204,7 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
         {
             printf("WARNING: ProcessBlock(): check proof-of-stake failed for block %s\n", hash.ToString().c_str());
 
-            // paycoin: ask for missing blocks
+            // traviscoin: ask for missing blocks
             if (pfrom)
                 pfrom->PushGetBlocks(pindexBest, pblock->GetHash());
 
@@ -2231,7 +2232,7 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
         }
     }
 
-    // paycoin: ask for pending sync-checkpoint if any
+    // traviscoin: ask for pending sync-checkpoint if any
     if (!IsInitialBlockDownload())
         Checkpoints::AskForPendingSyncCheckpoint(pfrom);
 
@@ -2240,7 +2241,7 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
     {
         printf("ProcessBlock: ORPHAN BLOCK, prev=%s\n", pblock->hashPrevBlock.ToString().substr(0,20).c_str());
         CBlock* pblock2 = new CBlock(*pblock);
-        // paycoin: check proof-of-stake
+        // traviscoin: check proof-of-stake
         if (pblock2->IsProofOfStake())
         {
             // Limited duplicity on stake: prevents block flood attack
@@ -2262,7 +2263,7 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
         if (pfrom)
         {
             pfrom->PushGetBlocks(pindexBest, GetOrphanRoot(pblock2));
-            // paycoin: getblocks may not obtain the ancestor block rejected
+            // traviscoin: getblocks may not obtain the ancestor block rejected
             // earlier by duplicate-stake check so we ask for it again directly
             if (!IsInitialBlockDownload())
                 pfrom->AskFor(CInv(MSG_BLOCK, WantedByOrphan(pblock2)));
@@ -2296,14 +2297,14 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
 
     printf("ProcessBlock: ACCEPTED\n");
 
-    // paycoin: if responsible for sync-checkpoint send it
+    // traviscoin: if responsible for sync-checkpoint send it
     if (pfrom && !CSyncCheckpoint::strMasterPrivKey.empty())
         Checkpoints::SendSyncCheckpoint(Checkpoints::AutoSelectSyncCheckpoint());
 
     return true;
 }
 
-// paycoin: sign block
+// traviscoin: sign block
 bool CBlock::SignBlock(const CKeyStore& keystore)
 {
     vector<valtype> vSolutions;
@@ -2326,7 +2327,7 @@ bool CBlock::SignBlock(const CKeyStore& keystore)
     return false;
 }
 
-// paycoin: check block signature
+// traviscoin: check block signature
 bool CBlock::CheckBlockSignature() const
 {
     if (GetHash() == hashGenesisBlock)
@@ -2351,7 +2352,7 @@ bool CBlock::CheckBlockSignature() const
     return false;
 }
 
-// paycoin: entropy bit for stake modifier if chosen by modifier
+// traviscoin: entropy bit for stake modifier if chosen by modifier
 unsigned int CBlock::GetStakeEntropyBit() const
 {
     unsigned int nEntropyBit = 0;
@@ -2376,7 +2377,7 @@ bool CheckDiskSpace(uint64 nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        ThreadSafeMessageBox(strMessage, "Paycoin", wxOK | wxICON_EXCLAMATION | wxMODAL);
+        ThreadSafeMessageBox(strMessage, "TravisCoin", wxOK | wxICON_EXCLAMATION | wxMODAL);
         StartShutdown();
         return false;
     }
@@ -2437,7 +2438,7 @@ bool LoadBlockIndex(bool fAllowNew)
     }
 
     printf("%s Network: genesis=0x%s nBitsLimit=0x%08x nBitsInitial=0x%08x nStakeMinAge=%d nCoinbaseMaturity=%d nModifierInterval=%d\n",
-           fTestNet? "Test" : "Paycoin", hashGenesisBlock.ToString().substr(0, 20).c_str(), bnProofOfWorkLimit.GetCompact(), bnInitialHashTarget.GetCompact(), nStakeMinAge, nCoinbaseMaturity, nModifierInterval);
+           fTestNet? "Test" : "TravisCoin", hashGenesisBlock.ToString().substr(0, 20).c_str(), bnProofOfWorkLimit.GetCompact(), bnInitialHashTarget.GetCompact(), nStakeMinAge, nCoinbaseMaturity, nModifierInterval);
 
     //
     // Load block index
@@ -2496,12 +2497,12 @@ bool LoadBlockIndex(bool fAllowNew)
         if (!block.AddToBlockIndex(nFile, nBlockPos))
             return error("LoadBlockIndex() : genesis block not accepted");
 
-        // paycoin: initialize synchronized checkpoint
+        // traviscoin: initialize synchronized checkpoint
         if (!Checkpoints::WriteSyncCheckpoint(hashGenesisBlock))
             return error("LoadBlockIndex() : failed to init sync checkpoint");
     }
 
-    // paycoin: if checkpoint master key changed must reset sync-checkpoint
+    // traviscoin: if checkpoint master key changed must reset sync-checkpoint
     {
         CTxDB txdb;
         string strPubKey = "";
@@ -2632,7 +2633,7 @@ string GetWarnings(string strFor)
         strStatusBar = "Info: Minting is currently disabled.";
     }
 
-    // paycoin: wallet lock warning for minting
+    // traviscoin: wallet lock warning for minting
     if (strMintWarning != "")
     {
         nPriority = 0;
@@ -2646,15 +2647,15 @@ string GetWarnings(string strFor)
         strStatusBar = strMiscWarning;
     }
 
-    // paycoin: should not enter safe mode for longer invalid chain
-    // paycoin: if sync-checkpoint is too old do not enter safe mode
+    // traviscoin: should not enter safe mode for longer invalid chain
+    // traviscoin: if sync-checkpoint is too old do not enter safe mode
     if (Checkpoints::IsSyncCheckpointTooOld(60 * 60 * 24 * 30) && fTestNet)
     {
         nPriority = 100;
         strStatusBar = "WARNING: Checkpoint is too old. Wait for block chain to download, or notify developers of the issue.";
     }
 
-    // paycoin: if detected invalid checkpoint enter safe mode
+    // traviscoin: if detected invalid checkpoint enter safe mode
     if (Checkpoints::hashInvalidCheckpoint != 0)
     {
         nPriority = 3000;
@@ -2672,7 +2673,7 @@ string GetWarnings(string strFor)
                 nPriority = alert.nPriority;
                 strStatusBar = alert.strStatusBar;
                 if (nPriority > 1000)
-                    strRPC = strStatusBar;  // paycoin: safe mode for high alert
+                    strRPC = strStatusBar;  // traviscoin: safe mode for high alert
             }
         }
     }
@@ -2830,7 +2831,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
             return true;
         }
 
-        // paycoin: record my external IP reported by peer
+        // traviscoin: record my external IP reported by peer
         if (addrFrom.IsRoutable() && addrMe.IsRoutable())
             addrSeenByPeer = addrMe;
 
@@ -2890,7 +2891,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
                 item.second.RelayTo(pfrom);
         }
 
-        // paycoin: relay sync-checkpoint
+        // traviscoin: relay sync-checkpoint
         {
             LOCK(Checkpoints::cs_hashSyncCheckpoint);
             if (!Checkpoints::checkpointMessage.IsNull())
@@ -2910,7 +2911,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
             pfrom->PushGetBlocks(pindexBest, uint256(0));
         }
 
-        // paycoin: ask for pending sync-checkpoint if any
+        // traviscoin: ask for pending sync-checkpoint if any
         if (!IsInitialBlockDownload())
             Checkpoints::AskForPendingSyncCheckpoint(pfrom);
     }
@@ -3083,7 +3084,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
                         // Bypass PushInventory, this must send even if redundant,
                         // and we want it right after the last block so they don't
                         // wait for other stuff first.
-                        // paycoin: best block is always the reference block to prevent
+                        // traviscoin: best block is always the reference block to prevent
                         // proof-of-stake block from being rejected by stake connection
                         // check
                         vector<CInv> vInv;
@@ -3129,7 +3130,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
             if (pindex->GetBlockHash() == hashStop)
             {
                 printf("  getblocks stopping at %d %s\n", pindex->nHeight, pindex->GetBlockHash().ToString().substr(0,20).c_str());
-                // paycoin: tell downloading node about the latest block if it's
+                // traviscoin: tell downloading node about the latest block if it's
                 // without risk being rejected due to stake connection check
                 if (hashStop != hashBestChain && pindex->GetBlockTime() + nStakeMinAge > pindexBest->GetBlockTime())
                     pfrom->PushInventory(CInv(MSG_BLOCK, hashBestChain));
@@ -3795,7 +3796,7 @@ CBlock* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool fProofOfS
     // Add our coinbase tx as first transaction
     pblock->vtx.push_back(txNew);
 
-    // paycoin: if coinstake available add coinstake tx
+    // traviscoin: if coinstake available add coinstake tx
     static int64 nLastCoinStakeSearchTime = GetAdjustedTime();  // only initialized at startup
     CBlockIndex* pindexPrev = pindexBest;
 
@@ -3912,7 +3913,7 @@ CBlock* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool fProofOfS
             if (tx.nTime > GetAdjustedTime() || (pblock->IsProofOfStake() && tx.nTime > pblock->vtx[1].nTime))
                 continue;
 
-            // paycoin: simplify transaction fee - allow free = false
+            // traviscoin: simplify transaction fee - allow free = false
             int64 nMinFee = tx.GetMinFee(nBlockSize, false, GMF_BLOCK);
 
             // Connecting shouldn't fail due to dependency on other memory pool transactions
@@ -4157,7 +4158,7 @@ void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
 
         if (fProofOfStake)
         {
-            // paycoin: if proof-of-stake block found then process block
+            // traviscoin: if proof-of-stake block found then process block
             if (pblock->IsProofOfStake())
             {
                 if (!pblock->SignBlock(*pwalletMain))

@@ -1,7 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2015 The Peercoin developers
-// Copyright (c) 2014-2015 The Paycoin developers
+// Copyright (c) 2014-2015 The TravisCoin developers
+// Copyright (c) 2017 The TravisCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef BITCOIN_MAIN_H
@@ -58,8 +59,8 @@ static const int fHaveUPnP = true;
 static const int fHaveUPnP = false;
 #endif
 
-static const uint256 hashGenesisBlockOfficial("0x00000e5695fbec8e36c10064491946ee3b723a9fa640fc0e25d3b8e4737e53e3");
-static const uint256 hashGenesisBlockTestNet("0x0000000f6bb18c77c5b39a25fa03e4c90bffa5cc10d6d9758a1bed5adcee9404");
+static const uint256 hashGenesisBlockOfficial("0x00000991cdaf9041ee229f88323b961d943289b7981bc");
+static const uint256 hashGenesisBlockTestNet("0x00000004b8cacd818bd0872eaa21f7fa8093b036da32072");
 
 
 static const int64 nMaxClockDrift = 2 * 60 * 60;        // two hours
@@ -731,7 +732,7 @@ public:
     bool ClientConnectInputs();
     bool CheckTransaction() const;
     bool AcceptToMemoryPool(CTxDB& txdb, bool fCheckInputs=true, bool* pfMissingInputs=NULL);
-    bool GetCoinAge(CTxDB& txdb, uint64& nCoinAge) const;  // paycoin: get transaction coin age
+    bool GetCoinAge(CTxDB& txdb, uint64& nCoinAge) const;  // traviscoin: get transaction coin age
 
 protected:
     const CTxOut& GetOutputFor(const CTxIn& input, const MapPrevTx& inputs) const;
@@ -875,7 +876,7 @@ public:
     // network and disk
     std::vector<CTransaction> vtx;
 
-    // paycoin: block signature - signed by coin base txout[0]'s owner
+    // traviscoin: block signature - signed by coin base txout[0]'s owner
     std::vector<unsigned char> vchBlockSig;
 
     // memory only
@@ -944,7 +945,7 @@ public:
 
     void UpdateTime(const CBlockIndex* pindexPrev);
 
-    // paycoin: two types of block: proof-of-work or proof-of-stake
+    // traviscoin: two types of block: proof-of-work or proof-of-stake
     bool IsProofOfStake() const
     {
         return (vtx.size() > 1 && vtx[1].IsCoinStake());
@@ -960,7 +961,7 @@ public:
         return IsProofOfStake()? std::make_pair(vtx[1].vin[0].prevout, vtx[1].nTime) : std::make_pair(COutPoint(), (unsigned int)0);
     }
 
-    // paycoin: get max transaction timestamp
+    // traviscoin: get max transaction timestamp
     int64 GetMaxTransactionTime() const
     {
         int64 maxTransactionTime = 0;
@@ -1105,10 +1106,10 @@ public:
     bool AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos);
     bool CheckBlock(int64 nHeight=-1) const;
     bool AcceptBlock();
-    bool GetCoinAge(uint64& nCoinAge) const; // paycoin: calculate total coin age spent in block
+    bool GetCoinAge(uint64& nCoinAge) const; // traviscoin: calculate total coin age spent in block
     bool SignBlock(const CKeyStore& keystore);
     bool CheckBlockSignature() const;
-    unsigned int GetStakeEntropyBit() const; // paycoin: entropy bit for stake modifier if chosen by modifier
+    unsigned int GetStakeEntropyBit() const; // traviscoin: entropy bit for stake modifier if chosen by modifier
 
 private:
     bool SetBestChainInner(CTxDB& txdb, CBlockIndex *pindexNew);
@@ -1134,12 +1135,12 @@ public:
     CBlockIndex* pnext;
     unsigned int nFile;
     unsigned int nBlockPos;
-    CBigNum bnChainTrust; // paycoin: trust score of block chain
+    CBigNum bnChainTrust; // traviscoin: trust score of block chain
     int nHeight;
     int64 nMint;
     int64 nMoneySupply;
 
-    unsigned int nFlags;  // paycoin: block index flags
+    unsigned int nFlags;  // traviscoin: block index flags
     enum
     {
         BLOCK_PROOF_OF_STAKE = (1 << 0), // is proof-of-stake block

@@ -3,12 +3,12 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Paycoin</source>
-        <translation>關於Paycoin</translation>
+        <source>About TravisCoin</source>
+        <translation>關於TravisCoin</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Paycoin&lt;/b&gt; version</source>
-        <translation>Paycoin版本</translation>
+        <source>&lt;b&gt;TravisCoin&lt;/b&gt; version</source>
+        <translation>TravisCoin版本</translation>
     </message>
     </context>
 <context>
@@ -158,7 +158,7 @@
     <message>
         <source>WARNING: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PAYCOINS&lt;/b&gt;!
 Are you sure you wish to encrypt your wallet?</source>
-        <translation>警告! 一旦加密錢包後又忘了密碼, 你將會失去所有paycoin! 你確定想要加密你的錢包嗎?</translation>
+        <translation>警告! 一旦加密錢包後又忘了密碼, 你將會失去所有traviscoin! 你確定想要加密你的錢包嗎?</translation>
     </message>
     <message>
         <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
@@ -236,8 +236,8 @@ Are you sure you wish to encrypt your wallet?</source>
         <translation>結束應用程式</translation>
     </message>
     <message>
-        <source>Show information about Paycoin</source>
-        <translation>顯示有關於 Paycoin 的資訊</translation>
+        <source>Show information about TravisCoin</source>
+        <translation>顯示有關於 TravisCoin 的資訊</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -1120,8 +1120,8 @@ Address: %4
 </translation>
     </message>
     <message>
-        <source>Specify pid file (default: paycoind.pid)</source>
-        <translation>指定行程識別碼檔案 (預設: paycoind.pid)
+        <source>Specify pid file (default: traviscoind.pid)</source>
+        <translation>指定行程識別碼檔案 (預設: traviscoind.pid)
 </translation>
     </message>
     <message>

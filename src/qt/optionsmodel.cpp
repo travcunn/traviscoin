@@ -48,7 +48,7 @@ void OptionsModel::Init()
     fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();
     language = settings.value("language", "").toString();
 
-    // These are shared with core Paycoin; we want
+    // These are shared with core TravisCoin; we want
     // command-line options to override the GUI settings:
     if (settings.contains("fUseUPnP"))
         SoftSetBoolArg("-upnp", settings.value("fUseUPnP").toBool());

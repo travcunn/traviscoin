@@ -1,4 +1,4 @@
-// Copyright (c) 2015 The Paycoin developers
+// Copyright (c) 2015 The TravisCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include "init.h"
@@ -29,7 +29,7 @@ Value setscrapeaddress(const Array& params, bool fHelp)
     CBitcoinAddress scrapeAddress(strScrapeAddress);
 
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid Paycoin address.");
+        throw JSONRPCError(-5, "Invalid TravisCoin address.");
 
     if (address.Get() == scrapeAddress.Get())
         throw JSONRPCError(-1, "Cannot set scrape address to the same as staking address.");
@@ -74,7 +74,7 @@ Value getscrapeaddress(const Array& params, bool fHelp)
     CBitcoinAddress address(strAddress);
 
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid Paycoin address.");
+        throw JSONRPCError(-5, "Invalid TravisCoin address.");
 
     if (!IsMine(*pwalletMain, address.Get()))
         throw JSONRPCError(-1, "Staking address must be in wallet.");
@@ -122,7 +122,7 @@ Value deletescrapeaddress(const Array& params, bool fHelp)
     CBitcoinAddress address(strAddress);
 
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid Paycoin address.");
+        throw JSONRPCError(-5, "Invalid TravisCoin address.");
 
     if (!IsMine(*pwalletMain, address.Get()))
         throw JSONRPCError(-1, "Staking address must be in wallet.");

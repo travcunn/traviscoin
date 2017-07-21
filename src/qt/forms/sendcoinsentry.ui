@@ -99,7 +99,7 @@
         <number>34</number>
        </property>
        <property name="placeholderText">
-        <string>Enter a Paycoin address (e.g. PNS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</string>
+        <string>Enter a TravisCoin address (e.g. PNS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</string>
        </property>
       </widget>
      </item>

@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2015 The Peercoin developers
-// Copyright (c) 2014-2015 The Paycoin developers
+// Copyright (c) 2014-2015 The TravisCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include "db.h"
@@ -92,7 +92,7 @@ void Shutdown(void* parg)
             delete scrapesDB;
         NewThread(ExitTimeout, NULL);
         Sleep(50);
-        printf("Paycoin exited\n\n");
+        printf("TravisCoin exited\n\n");
         fExit = true;
 #ifndef QT_GUI
         // ensure non-UI client get's exited here, but let Bitcoin-Qt reach return 0; in bitcoin.cpp
@@ -142,7 +142,7 @@ bool AppInit(int argc, char* argv[])
         //
         // Parameters
         //
-        // If Qt is used, parameters/paycoin.conf are parsed in qt/bitcoin.cpp's main()
+        // If Qt is used, parameters/traviscoin.conf are parsed in qt/bitcoin.cpp's main()
         ParseParameters(argc, argv);
         if (!boost::filesystem::is_directory(GetDataDir(false)))
         {
@@ -153,13 +153,13 @@ bool AppInit(int argc, char* argv[])
 
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
-            // First part of help message is specified in paycoind / RPC client
-            std::string strUsage = _("Paycoin version") + " " + FormatFullVersion() + "\n\n" +
+            // First part of help message is specified in traviscoind / RPC client
+            std::string strUsage = _("TravisCoin version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  paycoind [options]                     " + "\n" +
-                  "  paycoind [options] <command> [params]  " + _("Send command to server or paycoind") + "\n" +
-                  "  paycoind [options] help                " + _("List commands") + "\n" +
-                  "  paycoind [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  traviscoind [options]                     " + "\n" +
+                  "  traviscoind [options] <command> [params]  " + _("Send command to server or traviscoind") + "\n" +
+                  "  traviscoind [options] help                " + _("List commands") + "\n" +
+                  "  traviscoind [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -172,7 +172,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "paycoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "traviscoin:"))
                 fCommandLine = true;
 
         if (fCommandLine)
@@ -196,13 +196,13 @@ bool AppInit(int argc, char* argv[])
 
 bool static InitError(const std::string &str)
 {
-    ThreadSafeMessageBox(str, _("Paycoin"), wxOK | wxMODAL);
+    ThreadSafeMessageBox(str, _("TravisCoin"), wxOK | wxMODAL);
     return false;
 }
 
 bool static InitWarning(const std::string &str)
 {
-    ThreadSafeMessageBox(str, _("Paycoin"), wxOK | wxICON_EXCLAMATION | wxMODAL);
+    ThreadSafeMessageBox(str, _("TravisCoin"), wxOK | wxICON_EXCLAMATION | wxMODAL);
     return true;
 }
 
@@ -222,8 +222,8 @@ bool static Bind(const CService &addr, bool fError = true) {
 std::string HelpMessage()
 {
     string strUsage = _("Options:") + "\n" +
-        "  -conf=<file>          "   + _("Specify configuration file (default: paycoin.conf)") + "\n" +
-        "  -pid=<file>           "   + _("Specify pid file (default: paycoind.pid)") + "\n" +
+        "  -conf=<file>          "   + _("Specify configuration file (default: traviscoin.conf)") + "\n" +
+        "  -pid=<file>           "   + _("Specify pid file (default: traviscoind.pid)") + "\n" +
         "  -gen                  "   + _("Generate coins") + "\n" +
         "  -gen=0                "   + _("Don't generate coins") + "\n" +
         "  -datadir=<dir>        "   + _("Specify data directory") + "\n" +
@@ -285,7 +285,7 @@ std::string HelpMessage()
         "  -checklevel=<n>       "   + _("How thorough the block verification is (0-6, default: 1)") + "\n";
 
     strUsage += string() +
-        _("\nSSL options: (see the Paycoin Wiki for SSL setup instructions)") + "\n" +
+        _("\nSSL options: (see the TravisCoin Wiki for SSL setup instructions)") + "\n" +
         "  -rpcssl                                  " + _("Use OpenSSL (https) for JSON-RPC connections") + "\n" +
         "  -rpcsslcertificatechainfile=<file.cert>  " + _("Server certificate file (default: server.cert)") + "\n" +
         "  -rpcsslprivatekeyfile=<file.pem>         " + _("Server private key (default: server.pem)") + "\n" +
@@ -368,7 +368,7 @@ bool AppInit2()
         SoftSetBoolArg("-discover", false);
     }
 
-    if (mapArgs.count("-reservebalance")) // paycoin: reserve balance amount
+    if (mapArgs.count("-reservebalance")) // traviscoin: reserve balance amount
     {
         int64 nReserveBalance = 0;
         if (!ParseMoney(mapArgs["-reservebalance"], nReserveBalance))
@@ -376,7 +376,7 @@ bool AppInit2()
     }
 
     // Not used, semi-depricated; debating removal....
-    if (mapArgs.count("-checkpointkey")) // paycoin: checkpoint master priv key
+    if (mapArgs.count("-checkpointkey")) // traviscoin: checkpoint master priv key
     {
         if (!Checkpoints::SetCheckpointPrivKey(GetArg("-checkpointkey", "")))
             return InitError(_("Unable to sign checkpoint, wrong checkpointkey?"));
@@ -435,7 +435,7 @@ bool AppInit2()
 
     // ********************************************************* Step 4: application initialization: dir lock, daemonize, pidfile, debug log
 
-    // Make sure only a single Paycoin process is using the data directory.
+    // Make sure only a single TravisCoin process is using the data directory.
     boost::filesystem::path pathLockFile = GetDataDir() / ".lock";
     FILE* file = fopen(pathLockFile.string().c_str(), "a"); // empty lock file; created if it doesn't exist.
     if (file) fclose(file);
@@ -444,7 +444,7 @@ bool AppInit2()
      * throughout init. */
     const char* pszDataDir = GetDataDir().string().c_str();
     if (!lock.try_lock())
-        return InitError(strprintf(_("Cannot obtain a lock on data directory %s.  Paycoin is probably already running."), pszDataDir));
+        return InitError(strprintf(_("Cannot obtain a lock on data directory %s.  TravisCoin is probably already running."), pszDataDir));
 
 #if !defined(WIN32) && !defined(QT_GUI)
     if (fDaemon)
@@ -471,7 +471,7 @@ bool AppInit2()
     if (GetBoolArg("-shrinkdebugfile", !fDebug))
         ShrinkDebugFile();
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    printf("Paycoin version %s (%s)\n", FormatFullVersion().c_str(), CLIENT_DATE.c_str());
+    printf("TravisCoin version %s (%s)\n", FormatFullVersion().c_str(), CLIENT_DATE.c_str());
     printf("Using OpenSSL version %s\n", SSLeay_version(SSLEAY_VERSION));
     printf("Startup time: %s\n", DateTimeStrFormat("%x %H:%M:%S", GetTime()).c_str());
     printf("Default data directory %s\n", GetDefaultDataDir().string().c_str());
@@ -486,7 +486,7 @@ bool AppInit2()
     // Load data files
     //
     if (fDaemon)
-        fprintf(stdout, "Paycoin server starting\n");
+        fprintf(stdout, "TravisCoin server starting\n");
 
     if (!bitdb.Open(GetDataDir()))
     {
@@ -510,7 +510,7 @@ bool AppInit2()
         BOOST_FOREACH(std::string snet, mapMultiArgs["-onlynet"]) {
             enum Network net = ParseNetwork(snet);
             if (net == NET_UNROUTABLE) {
-                ThreadSafeMessageBox(_("Unknown network specified in -onlynet"), _("Paycoin"), wxOK | wxMODAL);
+                ThreadSafeMessageBox(_("Unknown network specified in -onlynet"), _("TravisCoin"), wxOK | wxMODAL);
                 return false;
             }
             nets.insert(net);
@@ -664,10 +664,10 @@ bool AppInit2()
         if (nLoadWalletRet == DB_CORRUPT)
             strErrors << _("Error loading wallet.dat: Wallet corrupted") << "\n";
         else if (nLoadWalletRet == DB_TOO_NEW)
-            strErrors << _("Error loading wallet.dat: Wallet requires newer version of Paycoin") << "\n";
+            strErrors << _("Error loading wallet.dat: Wallet requires newer version of TravisCoin") << "\n";
         else if (nLoadWalletRet == DB_NEED_REWRITE)
         {
-            strErrors << _("Wallet needed to be rewritten: restart Paycoin to complete") << "\n";
+            strErrors << _("Wallet needed to be rewritten: restart TravisCoin to complete") << "\n";
             printf("%s", strErrors.str().c_str());
             return InitError(strErrors.str());
         }

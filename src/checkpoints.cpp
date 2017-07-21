@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2015 The Peercoin developers
-// Copyright (c) 2014-2015 The Paycoin developers
+// Copyright (c) 2014-2015 The TravisCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -81,7 +81,7 @@ namespace Checkpoints
         return NULL;
     }
 
-    // paycoin: synchronized checkpoint (centrally broadcasted)
+    // traviscoin: synchronized checkpoint (centrally broadcasted)
     uint256 hashSyncCheckpoint = 0;
     uint256 hashPendingCheckpoint = 0;
     CSyncCheckpoint checkpointMessage;
@@ -89,7 +89,7 @@ namespace Checkpoints
     uint256 hashInvalidCheckpoint = 0;
     CCriticalSection cs_hashSyncCheckpoint;
 
-    // paycoin: get last synchronized checkpoint
+    // traviscoin: get last synchronized checkpoint
     CBlockIndex* GetLastSyncCheckpoint()
     {
         LOCK(cs_hashSyncCheckpoint);
@@ -100,7 +100,7 @@ namespace Checkpoints
         return NULL;
     }
 
-    // paycoin: only descendant of current sync-checkpoint is allowed
+    // traviscoin: only descendant of current sync-checkpoint is allowed
     bool ValidateSyncCheckpoint(uint256 hashCheckpoint)
     {
         if (!mapBlockIndex.count(hashSyncCheckpoint))
@@ -258,7 +258,7 @@ namespace Checkpoints
         return false;
     }
 
-    // paycoin: reset synchronized checkpoint to last hardened checkpoint
+    // traviscoin: reset synchronized checkpoint to last hardened checkpoint
     bool ResetSyncCheckpoint()
     {
         LOCK(cs_hashSyncCheckpoint);
@@ -380,12 +380,12 @@ namespace Checkpoints
     }
 }
 
-// paycoin: sync-checkpoint master key
+// traviscoin: sync-checkpoint master key
 const std::string CSyncCheckpoint::strMasterPubKey = "04ecec931afbe7634dd3519f2771239668a06a865f3fd2e74b271cc6005c35a9228a787b404a28638de85cc5cf3ea0c15777b3fceef577c36b12cf0ab18a4c669a";
 
 std::string CSyncCheckpoint::strMasterPrivKey = "";
 
-// paycoin: verify signature of sync-checkpoint message
+// traviscoin: verify signature of sync-checkpoint message
 bool CSyncCheckpoint::CheckSignature()
 {
     CKey key;
@@ -400,7 +400,7 @@ bool CSyncCheckpoint::CheckSignature()
     return true;
 }
 
-// paycoin: process synchronized checkpoint
+// traviscoin: process synchronized checkpoint
 bool CSyncCheckpoint::ProcessSyncCheckpoint(CNode* pfrom)
 {
     if (!CheckSignature())

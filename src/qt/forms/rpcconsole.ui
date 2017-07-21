@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Paycoin - Debug window</string>
+   <string>TravisCoin - Debug window</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -36,7 +36,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Paycoin Core</string>
+          <string>TravisCoin Core</string>
          </property>
         </widget>
        </item>
@@ -296,7 +296,7 @@
        <item row="14" column="0">
         <widget class="QPushButton" name="openDebugLogfileButton">
          <property name="toolTip">
-          <string>Open the Paycoin debug logfile from the current data directory. This can take a few seconds for large logfiles.</string>
+          <string>Open the TravisCoin debug logfile from the current data directory. This can take a few seconds for large logfiles.</string>
          </property>
          <property name="text">
           <string>&amp;Open</string>
@@ -319,7 +319,7 @@
        <item row="16" column="0">
         <widget class="QPushButton" name="showCLOptionsButton">
          <property name="toolTip">
-          <string>Show the Paycoin-Qt help message to get a list with possible Paycoin command-line options.</string>
+          <string>Show the TravisCoin-Qt help message to get a list with possible TravisCoin command-line options.</string>
          </property>
          <property name="text">
           <string>&amp;Show</string>

@@ -23,7 +23,7 @@ namespace GUIUtil
     QString dateTimeStr(const QDateTime &datetime);
     QString dateTimeStr(qint64 nTime);
 
-    // Render Paycoin addresses in monospace font
+    // Render TravisCoin addresses in monospace font
     QFont bitcoinAddressFont();
 
     // Set up widgets for address and amounts
@@ -95,7 +95,7 @@ namespace GUIUtil
     bool GetStartOnSystemStartup();
     bool SetStartOnSystemStartup(bool fAutoStart);
 
-    /** Help message for Paycoin-Qt, shown with --help. */
+    /** Help message for TravisCoin-Qt, shown with --help. */
     class HelpMessageBox : public QMessageBox
     {
         Q_OBJECT

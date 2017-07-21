@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2015 The Peercoin developers
-// Copyright (c) 2014-2015 The Paycoin developers
+// Copyright (c) 2014-2015 The TravisCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -131,10 +131,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "stop\n"
-            "Stop Paycoin server.");
+            "Stop TravisCoin server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Paycoin server stopping";
+    return "TravisCoin server stopping";
 }
 
 Value getgenerate(const Array& params, bool fHelp)
@@ -184,7 +184,7 @@ Value gethashespersec(const Array& params, bool fHelp)
     return (boost::int64_t)dHashesPerSec;
 }
 
-// paycoin: get network Gh/s estimate
+// traviscoin: get network Gh/s estimate
 Value getnetworkghps(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
@@ -288,13 +288,13 @@ Value getwork(const Array& params, bool fHelp)
             "If [data] is specified, tries to solve the block and returns true if it was successful.");
 
     if (vNodes.empty())
-        throw JSONRPCError(-9, "Paycoin is not connected!");
+        throw JSONRPCError(-9, "TravisCoin is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "Paycoin is downloading blocks...");
+        throw JSONRPCError(-10, "TravisCoin is downloading blocks...");
 
     if (pindexBest != NULL && pindexBest->nTime > POW_END_TIME)
-        throw JSONRPCError(-10, "Paycoin is currently on pure PoS state");
+        throw JSONRPCError(-10, "TravisCoin is currently on pure PoS state");
 
 
     typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
@@ -436,13 +436,13 @@ Value getblocktemplate(const Array& params, bool fHelp)
 
     {
         if (vNodes.empty())
-            throw JSONRPCError(-9, "Paycoin is not connected!");
+            throw JSONRPCError(-9, "TravisCoin is not connected!");
 
         if (IsInitialBlockDownload())
-            throw JSONRPCError(-10, "Paycoin is downloading blocks...");
+            throw JSONRPCError(-10, "TravisCoin is downloading blocks...");
 
         if (pindexBest != NULL && pindexBest->nTime > POW_END_TIME)
-            throw JSONRPCError(-10, "Paycoin is currently on pure PoS state");
+            throw JSONRPCError(-10, "TravisCoin is currently on pure PoS state");
 
         // Update block
         static unsigned int nTransactionsUpdatedLast;
@@ -573,7 +573,7 @@ Value submitblock(const Array& params, bool fHelp)
         throw JSONRPCError(-22, "Block decode failed");
     }
 
-    // Paycoin: sign block
+    // TravisCoin: sign block
     if (!block.SignBlock(*pwalletMain))
         throw JSONRPCError(-100, "Unable to sign block, wallet locked?");
 
@@ -799,7 +799,7 @@ string HTTPPost(const string& strMsg, const map<string,string>& mapRequestHeader
 {
     ostringstream s;
     s << "POST / HTTP/1.1\r\n"
-      << "User-Agent: paycoin-json-rpc/" << FormatFullVersion() << "\r\n"
+      << "User-Agent: traviscoin-json-rpc/" << FormatFullVersion() << "\r\n"
       << "Host: 127.0.0.1\r\n"
       << "Content-Type: application/json\r\n"
       << "Content-Length: " << strMsg.size() << "\r\n"
@@ -830,7 +830,7 @@ static string HTTPReply(int nStatus, const string& strMsg)
     if (nStatus == 401)
         return strprintf("HTTP/1.0 401 Authorization Required\r\n"
             "Date: %s\r\n"
-            "Server: paycoin-json-rpc/%s\r\n"
+            "Server: traviscoin-json-rpc/%s\r\n"
             "WWW-Authenticate: Basic realm=\"jsonrpc\"\r\n"
             "Content-Type: text/html\r\n"
             "Content-Length: 296\r\n"
@@ -857,7 +857,7 @@ static string HTTPReply(int nStatus, const string& strMsg)
             "Connection: close\r\n"
             "Content-Length: %d\r\n"
             "Content-Type: application/json\r\n"
-            "Server: paycoin-json-rpc/%s\r\n"
+            "Server: traviscoin-json-rpc/%s\r\n"
             "\r\n"
             "%s",
         nStatus,
@@ -1136,7 +1136,7 @@ void ThreadRPCServer2(void* parg)
     {
         unsigned char rand_pwd[32];
         RAND_bytes(rand_pwd, 32);
-        string strWhatAmI = "To use paycoin(paycoind)";
+        string strWhatAmI = "To use traviscoin(traviscoind)";
         if (mapArgs.count("-server"))
             strWhatAmI = strprintf(_("To use the %s option"), "\"-server\"");
         else if (mapArgs.count("-daemon"))
@@ -1144,7 +1144,7 @@ void ThreadRPCServer2(void* parg)
         ThreadSafeMessageBox(strprintf(
             _("%s, you must set a rpcpassword in the configuration file:\n %s\n"
               "It is recommended you use the following random password:\n"
-              "rpcuser=paycoinrpc\n"
+              "rpcuser=traviscoinrpc\n"
               "rpcpassword=%s\n"
               "(you do not need to remember this password)\n"
               "The username and password MUST NOT be the same.\n"

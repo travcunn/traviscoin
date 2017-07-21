@@ -182,7 +182,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface, and when sending coins</source>
-        <translation>Izaberite željeni najmanji dio Paycoina koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
+        <translation>Izaberite željeni najmanji dio TravisCoina koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
     </message>
     </context>
 <context>

@@ -28,8 +28,8 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
 #if QT_VERSION >= 0x040700
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
     ui->signatureIn_VM->setPlaceholderText(tr("Enter the signature of the message"));
-    ui->addressIn_SM->setPlaceholderText(tr("Enter a Paycoin address"));
-    ui->addressIn_VM->setPlaceholderText(tr("Enter a Paycoin address"));
+    ui->addressIn_SM->setPlaceholderText(tr("Enter a TravisCoin address"));
+    ui->addressIn_VM->setPlaceholderText(tr("Enter a TravisCoin address"));
 #endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_SM, this);

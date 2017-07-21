@@ -10,7 +10,7 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 "%s, you must set a rpcpassword in the configuration file:\n"
 " %s\n"
 "It is recommended you use the following random password:\n"
-"rpcuser=paycoinrpc\n"
+"rpcuser=traviscoinrpc\n"
 "rpcpassword=%s\n"
 "(you do not need to remember this password)\n"
 "The username and password MUST NOT be the same.\n"
@@ -22,7 +22,7 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Acceptable ciphers (default: TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:"
 "@STRENGTH)"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
-"Cannot obtain a lock on data directory %s.  Paycoin is probably already "
+"Cannot obtain a lock on data directory %s.  TravisCoin is probably already "
 "running."),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Error: The transaction was rejected.  This might happen if some of the coins "
@@ -43,13 +43,13 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Number of seconds to keep misbehaving peers from reconnecting (default: "
 "86400)"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
-"Unable to bind to %s on this computer. Paycoin is probably already running."),
+"Unable to bind to %s on this computer. TravisCoin is probably already running."),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Warning: -paytxfee is set very high. This is the transaction fee you will "
 "pay if you send a transaction."),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Warning: Please check that your computer's date and time are correct.  If "
-"your clock is wrong Paycoin will not work properly."),
+"your clock is wrong TravisCoin will not work properly."),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "You must set rpcpassword=<password> in the configuration file:\n"
 "%s\n"
@@ -57,7 +57,7 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 "permissions."),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "\n"
-"SSL options: (see the Paycoin Wiki for SSL setup instructions)"),
+"SSL options: (see the TravisCoin Wiki for SSL setup instructions)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Accept connections from outside (default: 1)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Add a node to connect to and attempt to keep the connection open"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Allow DNS lookups for -addnode, -seednode and -connect"),
@@ -79,7 +79,7 @@ QT_TRANSLATE_NOOP("bitcoin-core", "Done loading"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Error loading blkindex.dat"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Error loading wallet.dat"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Error loading wallet.dat: Wallet corrupted"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Error loading wallet.dat: Wallet requires newer version of Paycoin"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Error loading wallet.dat: Wallet requires newer version of TravisCoin"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Error"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Error: Transaction creation failed  "),
 QT_TRANSLATE_NOOP("bitcoin-core", "Error: Wallet locked, unable to create transaction  "),
@@ -114,14 +114,14 @@ QT_TRANSLATE_NOOP("bitcoin-core", "Output extra debugging information. Implies a
 QT_TRANSLATE_NOOP("bitcoin-core", "Output extra network debugging information"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Pass DNS requests to (SOCKS5) proxy"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Password for JSON-RPC connections"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Paycoin version"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Paycoin"),
+QT_TRANSLATE_NOOP("bitcoin-core", "TravisCoin version"),
+QT_TRANSLATE_NOOP("bitcoin-core", "TravisCoin"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Prepend debug output with timestamp"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Rescan the block chain for missing wallet transactions"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Rescanning..."),
 QT_TRANSLATE_NOOP("bitcoin-core", "Run in the background as a daemon and accept commands"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Select the version of socks proxy to use (4 or 5, 5 is default)"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Send command to server or paycoind"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Send command to server or traviscoind"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Send commands to node running on <ip> (default: 127.0.0.1)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Send trace/debug info to console instead of debug.log file"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Send trace/debug info to debugger"),
@@ -131,10 +131,10 @@ QT_TRANSLATE_NOOP("bitcoin-core", "Server private key (default: server.pem)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Set database cache size in megabytes (default: 25)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Set database disk log size in megabytes (default: 100)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Set key pool size to <n> (default: 100)"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Specify configuration file (default: paycoin.conf)"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Specify configuration file (default: traviscoin.conf)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify connection timeout (in milliseconds)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify data directory"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Specify pid file (default: paycoind.pid)"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Specify pid file (default: traviscoind.pid)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify your own public address"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Threshold for disconnecting misbehaving peers (default: 100)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "To use the %s option"),
@@ -151,6 +151,6 @@ QT_TRANSLATE_NOOP("bitcoin-core", "Use Universal Plug and Play to map the listen
 QT_TRANSLATE_NOOP("bitcoin-core", "Use Universal Plug and Play to map the listening port (default: 1)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Use the test network"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Username for JSON-RPC connections"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Wallet needed to be rewritten: restart Paycoin to complete"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Wallet needed to be rewritten: restart TravisCoin to complete"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Warning: Disk space is low"),
 };

@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2015 The Peercoin developers
-// Copyright (c) 2014-2015 The Paycoin developers
+// Copyright (c) 2014-2015 The TravisCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -553,7 +553,7 @@ bool CTxDB::LoadBlockIndex()
     {
         CBlockIndex* pindex = item.second;
         pindex->bnChainTrust = (pindex->pprev ? pindex->pprev->bnChainTrust : 0) + pindex->GetBlockTrust();
-        // paycoin: calculate stake modifier checksum
+        // traviscoin: calculate stake modifier checksum
         pindex->nStakeModifierChecksum = GetStakeModifierChecksum(pindex);
         // printf("pindex->nStakeModifierChecksum = %x height = %d\n", pindex->nStakeModifierChecksum, pindex->nHeight);
         if (!CheckStakeModifierCheckpoints(pindex->nHeight, pindex->nStakeModifierChecksum))
@@ -574,7 +574,7 @@ bool CTxDB::LoadBlockIndex()
     bnBestChainTrust = pindexBest->bnChainTrust;
     printf("LoadBlockIndex(): hashBestChain=%s  height=%d  trust=%s\n", hashBestChain.ToString().substr(0,20).c_str(), nBestHeight, bnBestChainTrust.ToString().c_str());
 
-    // paycoin: load hashSyncCheckpoint
+    // traviscoin: load hashSyncCheckpoint
     if (!ReadSyncCheckpoint(Checkpoints::hashSyncCheckpoint))
         return error("CTxDB::LoadBlockIndex() : hashSyncCheckpoint not loaded");
     printf("LoadBlockIndex(): synchronized checkpoint %s\n", Checkpoints::hashSyncCheckpoint.ToString().c_str());
@@ -770,7 +770,7 @@ bool CTxDB::LoadBlockIndexGuts()
             if (!pindexNew->CheckIndex())
                 return error("LoadBlockIndex() : CheckIndex failed at %d", pindexNew->nHeight);
 
-            // paycoin: build setStakeSeen
+            // traviscoin: build setStakeSeen
             if (pindexNew->IsProofOfStake())
                 setStakeSeen.insert(make_pair(pindexNew->prevoutStake, pindexNew->nStakeTime));
         }

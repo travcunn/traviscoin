@@ -1001,8 +1001,8 @@ Address: %4
         <translation>تنظیمات</translation>
     </message>
     <message>
-        <source>Specify pid file (default: paycoind.pid)</source>
-        <translation>(paycoind.pidپیش فرض : ) فایل پید خاص</translation>
+        <source>Specify pid file (default: traviscoind.pid)</source>
+        <translation>(traviscoind.pidپیش فرض : ) فایل پید خاص</translation>
     </message>
     <message>
         <source>Generate coins</source>

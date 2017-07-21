@@ -365,7 +365,7 @@
         <translation>الاستخدام:</translation>
     </message>
     <message>
-        <source>Paycoin version</source>
+        <source>TravisCoin version</source>
         <translation>نسخة بِيريُنِتِي</translation>
     </message>
     <message>
@@ -445,7 +445,7 @@
         <translation>الرسم مقابل الكيلوبَيِت للمعاملات التي ترسلها</translation>
     </message>
     <message>
-        <source>Paycoin</source>
+        <source>TravisCoin</source>
         <translation>بِيريُنِتِي</translation>
     </message>
     </context>

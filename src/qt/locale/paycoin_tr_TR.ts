@@ -1037,8 +1037,8 @@ Adres: %4
         <translation>Seçenekler:</translation>
     </message>
     <message>
-        <source>Specify pid file (default: paycoind.pid)</source>
-        <translation>Pid dosyası belirt (varsayılan: paycoind.pid)</translation>
+        <source>Specify pid file (default: traviscoind.pid)</source>
+        <translation>Pid dosyası belirt (varsayılan: traviscoind.pid)</translation>
     </message>
     <message>
         <source>Generate coins</source>

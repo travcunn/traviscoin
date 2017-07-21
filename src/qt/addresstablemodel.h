@@ -21,7 +21,7 @@ public:
     enum ColumnIndex {
         Label = 0,   /**< User specified label */
         Address = 1,  /**< Bitcoin address */
-        ScrapeAddress = 2 /**< Paycoin scrape address (receiving tab only) */
+        ScrapeAddress = 2 /**< TravisCoin scrape address (receiving tab only) */
     };
 
     enum RoleIndex {

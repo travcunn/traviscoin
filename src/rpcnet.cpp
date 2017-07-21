@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2015 The Paycoin Core developers
+// Copyright (c) 2014-2015 The TravisCoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -69,7 +69,7 @@ Value getpeerinfo(const Array& params, bool fHelp)
 extern CCriticalSection cs_mapAlerts;
 extern map<uint256, CAlert> mapAlerts;
 
-// paycoin: send alert.
+// traviscoin: send alert.
 // There is a known deadlock situation with ThreadMessageHandler
 // ThreadMessageHandler: holds cs_vSend and acquiring cs_main in SendMessages()
 // ThreadRPCServer: holds cs_main and acquiring cs_vSend in alert.RelayTo()/PushMessage()/BeginMessage()

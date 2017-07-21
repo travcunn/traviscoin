@@ -1028,8 +1028,8 @@ Address: %4
         <translation>אפשרויות:</translation>
     </message>
     <message>
-        <source>Specify pid file (default: paycoind.pid)</source>
-        <translation>ציין קובץ pid (ברירת מחדל: paycoind.pid)</translation>
+        <source>Specify pid file (default: traviscoind.pid)</source>
+        <translation>ציין קובץ pid (ברירת מחדל: traviscoind.pid)</translation>
     </message>
     <message>
         <source>Generate coins</source>

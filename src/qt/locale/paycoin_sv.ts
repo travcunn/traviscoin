@@ -176,7 +176,7 @@
     </message>
     <message>
         <source>&amp;Receive coins</source>
-        <translation>&amp;amp; Ta emot Paycoins</translation>
+        <translation>&amp;amp; Ta emot TravisCoins</translation>
     </message>
     <message>
         <source>Show the list of addresses for receiving payments</source>
@@ -184,7 +184,7 @@
     </message>
     <message>
         <source>&amp;Send coins</source>
-        <translation>&amp;amp; Skicka Paycoins</translation>
+        <translation>&amp;amp; Skicka TravisCoins</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -945,8 +945,8 @@ Adress:%4
         <translation>Inställningar:</translation>
     </message>
     <message>
-        <source>Specify pid file (default: paycoind.pid)</source>
-        <translation>Ange pid fil (standard:paycoind.pid)</translation>
+        <source>Specify pid file (default: traviscoind.pid)</source>
+        <translation>Ange pid fil (standard:traviscoind.pid)</translation>
     </message>
     <message>
         <source>Generate coins</source>
