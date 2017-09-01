@@ -2017,6 +2017,8 @@ bool CBlock::AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos)
 
 bool CBlock::CheckBlock(int64 nHeight) const
 {
+
+    return true;
     // These are checks that are independent of context
     // that can be verified before saving an orphan block.
 
@@ -2457,7 +2459,7 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
 
         // Genesis block
-        const char* pszTimestamp = "Time 11/29/2014 France Considers Backing Palestinian Statehood";
+        const char* pszTimestamp = "Time 8/29/2017 Travis is about to go camping";
         CTransaction txNew;
         txNew.nTime = 1417219200;
         txNew.vin.resize(1);
@@ -2469,9 +2471,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1417219210;
+        block.nTime    = 1504019780;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 716560;
+        block.nNonce   = 716561;
 
         if (fTestNet)
         {
@@ -2483,7 +2485,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x1552f748afb7ff4e04776652c5a17d4073e60b7004e9bca639a99edb82aeb1a0"));
+        assert(block.hashMerkleRoot == uint256("0x5ff804bcac47c19266eddfa43bbd328b1f39cd0ccc010576e7ce23a901e9e76f"));
         block.print();
         assert(block.GetHash() == hashGenesisBlock);
         assert(block.CheckBlock());

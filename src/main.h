@@ -32,7 +32,7 @@ static const unsigned int MAX_BLOCK_SIGOPS = MAX_BLOCK_SIZE/50;
 static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100;
 static const int64 MIN_TX_FEE = 0.1 * CENT;
 static const int64 MIN_RELAY_TX_FEE = 0.1 * CENT;
-static const int64 MAX_MONEY = 2000000000 * COIN;
+static const int64 MAX_MONEY = 200000 * COIN;
 static const int64 MAX_MINT_PROOF_OF_WORK = 9999 * COIN;
 static const int64 MIN_TXOUT_AMOUNT = MIN_TX_FEE;
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
@@ -59,7 +59,7 @@ static const int fHaveUPnP = true;
 static const int fHaveUPnP = false;
 #endif
 
-static const uint256 hashGenesisBlockOfficial("0x00000991cdaf9041ee229f88323b961d943289b7981bc");
+static const uint256 hashGenesisBlockOfficial("0x62815f49ac6fd357c0765400d86b520c3c361d726a72d9b16a1e091ec7a2a3f9");
 static const uint256 hashGenesisBlockTestNet("0x00000004b8cacd818bd0872eaa21f7fa8093b036da32072");
 
 
