@@ -2,12 +2,13 @@ TravisCoin Core integration/staging tree
 =====================================
 
 
-Current Exchanges: 
+Current Exchanges and Previous Transactions in the wild:
 ----------------
 | travcoin | value           |
 |:--------:|-----------------|
 | 1        | 1 tickle attack |
 | 2        | 1 stick of gum  | 
+| 20       | 1 box of kleenex|
 
 
 What is TravisCoin?
